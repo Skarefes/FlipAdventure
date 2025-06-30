@@ -32,7 +32,7 @@ class Player(Entity):
         self.vel_y += self.gravity
         self.rect.y += self.vel_y
 
-        # Ficar, no chao e o detectar
+        # Ficar no chao e o detectar
         if self.rect.bottom >= WIN_HEIGHT - 30:  # Aumento do encalço do chão
             self.rect.bottom = WIN_HEIGHT - 30
             self.rect.centery += ENTITY_SPEED[self.name]
