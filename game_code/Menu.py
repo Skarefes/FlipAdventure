@@ -24,14 +24,14 @@ class Menu:
         while True:
             # menu dos textos com seus tamanhos, cores e tipos
             self.window.blit(self.surf, self.rect)
-            self.menu_text(60, "Fly", COLOR_GREEN, ((WIN_WIDTH / 2), 90))
-            self.menu_text(60, "Adventure", COLOR_GREEN, ((WIN_WIDTH / 2), 150))
-            # Menu de leitura que quando selecionar muda sua cor
+            self.menu_text(50, "Fly", COLOR_GREEN, ((WIN_WIDTH / 2), 90))
+            self.menu_text(40, "Adventure", COLOR_GREEN, ((WIN_WIDTH / 2), 150))
+            # Menu de leitura que quando selecionar muda o texto
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(30, MENU_OPTION[i], COLOR_GREEN, ((WIN_WIDTH / 2), 300 + 50 * i))
+                    self.menu_text(20, MENU_OPTION[i], COLOR_GREEN, ((WIN_WIDTH / 2), 200 + 50 * i))
                 else:
-                    self.menu_text(30, MENU_OPTION[i], COLOR_BLACK, ((WIN_WIDTH / 2), 300 + 50 * i))
+                    self.menu_text(20, MENU_OPTION[i], COLOR_BLACK, ((WIN_WIDTH / 2), 200 + 50 * i))
             pygame.display.flip()
 
             # Check de todos os eventos do Menu
