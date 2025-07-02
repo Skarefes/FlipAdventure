@@ -3,10 +3,11 @@ from game_code.Entity import Entity
 
 
 class Enemy(Entity):
-    def __init__(self, name: str, position: tuple):
-        super().__init__(name, position)
+    # Classe do inimigo e seu construtor
+    def __init__(self, name: str, position: tuple, size: tuple):
+        super().__init__(name, position, size)
 
-    def move(self):
+    def move(self): # metodo que faz ele se movimentar para a esquerda
         self.rect.centerx -= ENTITY_SPEED[self.name]
         if self.rect.top <= 0:
             self.rect.left = WIN_WIDTH

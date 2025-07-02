@@ -11,6 +11,9 @@ COLOR_BLACK = (0, 0, 0)
 CHAR_SCALE = (40, 49)
 
 # E
+EVENT_ENEMY = pygame.USEREVENT + 1
+ENEMY_SCALE = (45,49)
+
 ENTITY_SPEED = {
     'Bg0': 0,
     'Bg1': 1,
@@ -23,15 +26,17 @@ ENTITY_SPEED = {
     'Bg8': 7,
     'Player1': 3,
     'Player2': 3,
-    'Enemy1': 2,
-    'Enemy2': 1
+    'Enemy1': 4,
 }
 
 # G
-GRAVITY = 0.5
+GRAVITY = 0.6
+
+# H
+HEIGHT_MAX = 270
 
 # J
-JUMP_S = -12
+JUMP_S = -15
 
 # M
 MENU_OPTION = ('NEW GAME 1P',
@@ -52,7 +57,7 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
                     'Player2': pygame.K_LCTRL}
 
 # S
-SPAWN_TIME = 4000
+SPAWN_TIME = 900
 
 # W
 WIN_WIDTH = 900

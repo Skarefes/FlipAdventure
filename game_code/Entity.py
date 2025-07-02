@@ -10,9 +10,9 @@ class Entity(ABC):
     #Construtor que contem o nome, a imagem que será gerada, sua posição, sua velocidade e sua escala
     def __init__(self, name: str, position: tuple, size = None):
         self.name = name
-        #Carregar o cenario, e transformar a scala dele no tamanho que eu precisar da tela, para ficar ajustado
+        #Carregar os cenarios e personagens
         cenario_original = pygame.image.load('./asset/' + name + '.png').convert_alpha()
-        #Se o size tiver alguma escala posta, se não vai original
+        #Se o size tiver alguma escala alterada manualmente ele mostra, se não vai o original
         if size is not None:
             self.surf = pygame.transform.scale(cenario_original, size)
         else:
