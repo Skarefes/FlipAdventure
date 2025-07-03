@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 import pygame
 
-from game_code.Const import WIN_WIDTH, WIN_HEIGHT
+from game_code.Const import WIN_WIDTH, WIN_HEIGHT, ENTITY_HEALTH
 
 
 #Classe abstract
@@ -19,6 +19,7 @@ class Entity(ABC):
             self.surf = cenario_original
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         self.speed = 0
+        self.health = ENTITY_HEALTH[self.name]
 
     @abstractmethod #Metodo abstrato
     def move(self):

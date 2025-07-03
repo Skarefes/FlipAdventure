@@ -24,7 +24,7 @@ class Menu:
         while True:
             # menu dos textos com seus tamanhos, cores e tipos
             self.window.blit(self.surf, self.rect)
-            self.menu_text(50, "Fly", COLOR_GREEN, ((WIN_WIDTH / 2), 90))
+            self.menu_text(50, "Flip", COLOR_GREEN, ((WIN_WIDTH / 2), 90))
             self.menu_text(40, "Adventure", COLOR_GREEN, ((WIN_WIDTH / 2), 150))
             # Menu de leitura que quando selecionar muda o texto
             for i in range(len(MENU_OPTION)):

@@ -29,6 +29,21 @@ ENTITY_SPEED = {
     'Enemy1': 4,
 }
 
+ENTITY_HEALTH = {
+    'Bg0': 999,
+    'Bg1': 999,
+    'Bg2': 999,
+    'Bg3': 999,
+    'Bg4': 999,
+    'Bg5': 999,
+    'Bg6': 999,
+    'Bg7': 999,
+    'Bg8': 999,
+    'Player1': 10,
+    'Player2': 10,
+    'Enemy1': 1
+}
+
 # G
 GRAVITY = 0.6
 

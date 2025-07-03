@@ -9,5 +9,3 @@ class Enemy(Entity):
 
     def move(self): # metodo que faz ele se movimentar para a esquerda
         self.rect.centerx -= ENTITY_SPEED[self.name]
-        if self.rect.top <= 0:
-            self.rect.left = WIN_WIDTH
