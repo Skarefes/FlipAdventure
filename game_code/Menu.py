@@ -1,7 +1,8 @@
 import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
-from game_code.Const import COLOR_GREEN, WIN_WIDTH, MENU_OPTION, COLOR_WHITE, COLOR_BLACK, WIN_HEIGHT
+from game_code.Const import COLOR_GREEN, WIN_WIDTH, MENU_OPTION, COLOR_WHITE, COLOR_BLACK, WIN_HEIGHT, COLOR_YELLOW, \
+    COLOR_BLUE
 
 
 class Menu:
@@ -25,13 +26,16 @@ class Menu:
             # menu dos textos com seus tamanhos, cores e tipos
             self.window.blit(self.surf, self.rect)
             self.menu_text(50, "Flip", COLOR_GREEN, ((WIN_WIDTH / 2), 90))
-            self.menu_text(40, "Adventure", COLOR_GREEN, ((WIN_WIDTH / 2), 150))
+            self.menu_text(40, "Adventure", COLOR_GREEN, ((WIN_WIDTH / 2), 140))
+            self.menu_text(10, "Roger Yamassaki", COLOR_BLACK, ((WIN_WIDTH / 2 + 400), 360))
+            self.menu_text(10, "RU: 4674958", COLOR_BLACK, ((WIN_WIDTH / 2 + 400), 375))
+
             # Menu de leitura que quando selecionar muda o texto
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_GREEN, ((WIN_WIDTH / 2), 200 + 50 * i))
+                    self.menu_text(20, MENU_OPTION[i], COLOR_GREEN, ((WIN_WIDTH / 2), 220 + 50 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_BLACK, ((WIN_WIDTH / 2), 200 + 50 * i))
+                    self.menu_text(20, MENU_OPTION[i], COLOR_BLACK, ((WIN_WIDTH / 2), 220 + 50 * i))
             pygame.display.flip()
 
             # Check de todos os eventos do Menu

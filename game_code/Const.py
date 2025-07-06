@@ -1,18 +1,20 @@
 import pygame
 
 # C
-COLOR_ORANGE = (255, 128, 0)
+COLOR_ORANGE = (255, 85, 0)
 COLOR_WHITE = (255, 255, 255)
-COLOR_BLUE = (0, 0, 255)
-COLOR_GREEN = (0, 255, 0)
-COLOR_YELLOW = (255, 255, 0)
+COLOR_BLUE = (0, 0, 135)
+COLOR_GREEN = (0, 90, 0)
+COLOR_YELLOW = (211, 211, 0)
 COLOR_BLACK = (0, 0, 0)
 
 CHAR_SCALE = (40, 49)
 
 # E
-EVENT_ENEMY = pygame.USEREVENT + 1
-ENEMY_SCALE = (45,49)
+EVENT_ENEMY = pygame.USEREVENT + 1 # Para aumentar e ocorrer o evento 1, que são os inimigos
+EVENT_TIMEOUT = pygame.USEREVENT + 2
+
+ENEMY_SCALE = (45, 49)
 
 ENTITY_SPEED = {
     'Bg0': 0,
@@ -41,6 +43,36 @@ ENTITY_HEALTH = {
     'Bg8': 999,
     'Player1': 10,
     'Player2': 10,
+    'Enemy1': 1
+}
+
+ENTITY_DAMAGE = {
+    'Bg0': 0,
+    'Bg1': 0,
+    'Bg2': 0,
+    'Bg3': 0,
+    'Bg4': 0,
+    'Bg5': 0,
+    'Bg6': 0,
+    'Bg7': 0,
+    'Bg8': 0,
+    'Player1': 0,
+    'Player2': 0,
+    'Enemy1': 1
+}
+
+ENTITY_SCORE = {
+    'Bg0': 0,
+    'Bg1': 0,
+    'Bg2': 0,
+    'Bg3': 0,
+    'Bg4': 0,
+    'Bg5': 0,
+    'Bg6': 0,
+    'Bg7': 0,
+    'Bg8': 0,
+    'Player1': 0,
+    'Player2': 0,
     'Enemy1': 1
 }
 
@@ -73,7 +105,30 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
 
 # S
 SPAWN_TIME = 900
+SPEED_SPAWN_TIME = 700
+
+# T
+TIMEOUT_LEVEL = 16000
+TIMEOUT_STEP = 100
 
 # W
 WIN_WIDTH = 900
 WIN_HEIGHT = 400
+
+# S
+SCORE_POS = {
+    'Titulo': (WIN_WIDTH / 2, 50),
+    'EnterName': (WIN_WIDTH / 2, 88),
+    'Label': (WIN_WIDTH / 2, 90),
+    'Nome': (WIN_WIDTH / 2, 110),
+    0: (WIN_WIDTH / 2, 110),
+    1: (WIN_WIDTH / 2, 130),
+    2: (WIN_WIDTH / 2, 150),
+    3: (WIN_WIDTH / 2, 170),
+    4: (WIN_WIDTH / 2, 190),
+    5: (WIN_WIDTH / 2, 210),
+    6: (WIN_WIDTH / 2, 230),
+    7: (WIN_WIDTH / 2, 250),
+    8: (WIN_WIDTH / 2, 270),
+    9: (WIN_WIDTH / 2, 290),
+}

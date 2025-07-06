@@ -6,6 +6,7 @@ class Enemy(Entity):
     # Classe do inimigo e seu construtor
     def __init__(self, name: str, position: tuple, size: tuple):
         super().__init__(name, position, size)
+        self.passed_player = {"Player1": False, "Player2": False}
 
     def move(self): # metodo que faz ele se movimentar para a esquerda
         self.rect.centerx -= ENTITY_SPEED[self.name]

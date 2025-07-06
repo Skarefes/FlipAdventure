@@ -2,12 +2,12 @@ from abc import ABC, abstractmethod
 
 import pygame
 
-from game_code.Const import WIN_WIDTH, WIN_HEIGHT, ENTITY_HEALTH
+from game_code.Const import WIN_WIDTH, WIN_HEIGHT, ENTITY_HEALTH, ENTITY_DAMAGE, ENTITY_SCORE
 
 
 #Classe abstract
 class Entity(ABC):
-    #Construtor que contem o nome, a imagem que será gerada, sua posição, sua velocidade e sua escala
+    #Construtor da super classe
     def __init__(self, name: str, position: tuple, size = None):
         self.name = name
         #Carregar os cenarios e personagens
@@ -20,6 +20,8 @@ class Entity(ABC):
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         self.speed = 0
         self.health = ENTITY_HEALTH[self.name]
+        self.damage = ENTITY_DAMAGE[self.name]
+        self.score = ENTITY_SCORE[self.name]
 
     @abstractmethod #Metodo abstrato
     def move(self):
