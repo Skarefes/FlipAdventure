@@ -62,35 +62,14 @@ class Level:
                     self.entity_list.append(EntityFactory.get_entity("Enemy1", ENEMY_SCALE))
                 if event.type == EVENT_TIMEOUT:  # Evento no qual acabar o tempo ocorre algo, como terminar o jogo
                     self.timeout -= TIMEOUT_STEP
-                    if self.timeout == TIMEOUT_LEVEL // 2: # Se o tempo tiver pela metade
-                        pygame.time.set_timer(EVENT_ENEMY, SPEED_SPAWN_TIME) # os inimigos apareceram mais rapido
+                    if self.timeout == TIMEOUT_LEVEL // 2:  # Se o tempo tiver pela metade
+                        pygame.time.set_timer(EVENT_ENEMY, SPEED_SPAWN_TIME)  # os inimigos apareceram mais rapido
                     if self.timeout == 0:  # Se o tempo zerar
                         for ent in self.entity_list:  # varrer as entidades
                             if isinstance(ent, Player) and ent.name == 'Player1':  # Se este for entidade player 1
                                 player_score[0] = ent.score  # Conta no score do Player1
                             if isinstance(ent, Player) and ent.name == 'Player2':
                                 player_score[1] = ent.score
-
-                        # Pauso a musica de fundo
-                        pygame.mixer_music.stop()
-
-                        # Se terminar e vencer, toca a musica de vitória
-                        victory_sound = pygame.mixer.Sound('./asset/Victory-sound.mp3')
-                        victory_sound.play()
-
-                        # Mostrar tela preta com mensagem de finalização
-                        self.window.fill((0, 0, 0))
-                        self.level_text(40, "Parabens pela vitória !!", COLOR_YELLOW,
-                                        (WIN_WIDTH / 2 - 300, WIN_HEIGHT / 2 - 21))
-                        self.level_text(20, "Feito Por: Roger Yamassaki", COLOR_ORANGE,
-                                        (WIN_WIDTH / 2 - 240, WIN_HEIGHT / 2 + 45))
-                        self.level_text(15, "RU: 4674958", COLOR_YELLOW,
-                                        (WIN_WIDTH / 2 - 300, WIN_HEIGHT / 2 + 78))
-                        pygame.display.flip()
-
-                        # Tempo de imagem de parabens com nome do autor
-                        pygame.time.delay(3000)
-
                         return True
 
             found_player = False  # Começa com player encontrado falso
@@ -102,7 +81,7 @@ class Level:
                 death_sound.play()  # Tocar o som quando morrer
 
                 self.level_text(40, "Voce falhou !!", COLOR_BLUE,
-                                        (WIN_WIDTH / 2 - 170, WIN_HEIGHT / 2 - 25))
+                                (WIN_WIDTH / 2 - 170, WIN_HEIGHT / 2 - 25))
                 pygame.display.flip()
 
                 pygame.time.delay(1200)  # Após morrer pausa o jogo por 1 segundo
